@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
         //quay dau
         if (moveInput.x != 0)
         {
+            //CmnLoiNhieuVai
             characterSR.flipX = moveInput.x < 0;
             //if (moveInput.x > 0)
             //{
