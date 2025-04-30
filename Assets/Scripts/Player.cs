@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -11,6 +13,11 @@ public class Player : MonoBehaviour
     private float dashSpeed = 10f;
     public float dashDuration = 0.5f;
     private bool isDashing = false;
+    // Hp cho player
+    [SerializeField] protected float maxHp = 100f;
+    protected float currentHp;
+    [SerializeField] private Image hpBar;
+
 
     private Rigidbody2D rb;
 
@@ -24,6 +31,13 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        currentHp = maxHp;
+        if (hpBar == null)
+        {
+            hpBar = transform.Find("Hpbar/Hp").GetComponent<Image>();
+        }
+        updateHpBar();
     }
 
     private void Update()
@@ -72,4 +86,29 @@ public class Player : MonoBehaviour
         isDashing = false;
         rb.linearVelocity = Vector2.zero;
     }
+
+    public void takeDamage(float damage)
+    {
+        currentHp -= damage;
+        currentHp = Mathf.Max(currentHp, 0);
+        updateHpBar();
+        if(currentHp <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
+    }
+
+    protected private void updateHpBar()
+    {
+        if(hpBar != null)
+        {
+            hpBar.fillAmount = currentHp / maxHp;
+        }
+    }
+
 }
