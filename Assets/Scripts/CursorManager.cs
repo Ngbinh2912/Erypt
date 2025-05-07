@@ -7,7 +7,7 @@ public class CursorManager : MonoBehaviour
     [SerializeField] private Texture2D cursorReload;
     private Vector2 hotspot = new Vector2 (16, 48);
 
-    public float timedelay;
+    private float timedelay;
     private bool isReloading = false;
 
     private LongRangeWeapon weapon;
