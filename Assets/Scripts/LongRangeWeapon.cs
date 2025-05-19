@@ -27,7 +27,7 @@ public class LongRangeWeapon : MonoBehaviour
 
     void Update()
     {
-        RotateGun();
+        RotateWeapon();
         timeBtwFire -= Time.deltaTime;
 
         if (Input.GetMouseButtonDown(0) && timeBtwFire < 0 && currentAmmo > 0 && !isReloading)
@@ -37,7 +37,7 @@ public class LongRangeWeapon : MonoBehaviour
         ReloadAmmo();
     }
 
-    void RotateGun()
+    void RotateWeapon()
     {
         //lay vi tri chuot
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
