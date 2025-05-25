@@ -3,6 +3,7 @@ using UnityEngine;
 public class Slime : Enemy
 {
     [SerializeField] private GameObject slimeLiquit;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
