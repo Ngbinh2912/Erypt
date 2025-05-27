@@ -18,6 +18,9 @@ public abstract class Enemy : MonoBehaviour
     Animator animator;
     [SerializeField] protected float attackRange = 1f;
 
+    // them bien kiem soat kich hoat
+    protected bool isActive = false;
+
     protected virtual void Start()
     {
         animator = GetComponent<Animator>();
@@ -32,12 +35,15 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void Update()
     {
+        // chi hoat dong khi isActive = true
+        if (!isActive) return;
+
         moveToPlayer();
     }
 
     protected void moveToPlayer()
     {
-        if(player != null)
+        if (player != null)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, enemyMovementSpeed * Time.deltaTime);
             flipEnemy();
@@ -48,9 +54,9 @@ public abstract class Enemy : MonoBehaviour
     protected void attackPlayer()
     {
         float distance = Vector3.Distance(transform.position, player.transform.position);
-        if(distance <= attackRange)
+        if (distance <= attackRange)
         {
-            animator.SetBool("isAttack",true);
+            animator.SetBool("isAttack", true);
         }
         else
         {
@@ -60,7 +66,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected void flipEnemy()
     {
-        if(player != null)
+        if (player != null)
         {
             transform.localScale = new Vector3(player.transform.position.x > transform.position.x ? -1 : 1, 1, 1);
         }
@@ -71,7 +77,7 @@ public abstract class Enemy : MonoBehaviour
         currentHp -= damage;
         currentHp = Mathf.Clamp(currentHp, 0, maxHp);
         updateHpBar();
-        if(currentHp <= 0)
+        if (currentHp <= 0)
         {
             animator.SetBool("isDying", true);
             Die();
@@ -85,10 +91,15 @@ public abstract class Enemy : MonoBehaviour
 
     protected void updateHpBar()
     {
-        if(hpBar != null && maxHp > 0)
+        if (hpBar != null && maxHp > 0)
         {
             hpBar.fillAmount = currentHp / maxHp;
         }
     }
 
+    // goi de kich hoat quai
+    public virtual void ActivateEnemy()
+    {
+        isActive = true;
+    }
 }

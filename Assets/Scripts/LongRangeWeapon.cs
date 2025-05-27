@@ -5,29 +5,39 @@ using UnityEngine;
 
 public class LongRangeWeapon : MonoBehaviour
 {
-
     public GameObject bullet;
     public Transform firePos;
     public float TimeBtwFire = 0.5f;
     public float bulletForce;
 
+    public int currentAmmo;
+    private int maxAmmo = 5;
+
     private float timeBtwFire;
 
+    public float timeReload = 2f;
+    private float timedelay;
+    private bool isReloading = false;
 
 
-    // Update is called once per frame
+    void Start()
+    {
+        currentAmmo = maxAmmo;
+    }
+
     void Update()
     {
-        RotateGun();
+        RotateWeapon();
         timeBtwFire -= Time.deltaTime;
 
-        if (Input.GetMouseButtonDown(0) && timeBtwFire < 0)
+        if (Input.GetMouseButtonDown(0) && timeBtwFire < 0 && currentAmmo > 0 && !isReloading)
         {
             FireBullet();
         }
+        ReloadAmmo();
     }
 
-    void RotateGun()
+    void RotateWeapon()
     {
         //lay vi tri chuot
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -57,5 +67,24 @@ public class LongRangeWeapon : MonoBehaviour
 
         Rigidbody2D rb = bulletTmp.GetComponent<Rigidbody2D>();
         rb.AddForce(transform.right * bulletForce, ForceMode2D.Impulse);
+        currentAmmo--;
+    }
+
+    void ReloadAmmo()
+    {
+        if (Input.GetMouseButtonDown(1) && currentAmmo < maxAmmo && !isReloading)
+        {
+            isReloading = true;
+            timedelay = timeReload;
+        }
+        if (isReloading)
+        {
+            timedelay -= Time.deltaTime;
+            if (timedelay < 0)
+            {
+                currentAmmo = maxAmmo;
+                isReloading = false;
+            }
+        }
     }
 }
