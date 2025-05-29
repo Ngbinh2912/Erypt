@@ -1,6 +1,8 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+
 
 public abstract class Enemy : MonoBehaviour
 {
@@ -23,6 +25,9 @@ public abstract class Enemy : MonoBehaviour
 
     // them bien kiem soat kich hoat
     protected bool isActive = false;
+
+    //su kien khi quai chet
+    public event Action<Enemy> OnEnemyDied;
 
     protected virtual void Start()
     {
@@ -92,6 +97,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void Die()
     {
+        OnEnemyDied?.Invoke(this);
         Destroy(gameObject);
     }
 
