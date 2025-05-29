@@ -100,10 +100,17 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.73333335
-    functionName: TryDealDamage
+  - time: 0.51666665
+    functionName: EnableWeaponCollider
     data: 
-    objectReferenceParameter: {fileID: 3104368175706097945, guid: bc9facff7ce240b4e8caa70b937da83d, type: 3}
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.9166667
+    functionName: DisableWeaponCollider
+    data: 
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

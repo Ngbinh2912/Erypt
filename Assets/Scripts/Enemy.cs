@@ -9,6 +9,7 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float maxHp = 50f;
     protected float currentHp;
     [SerializeField] private Image hpBar;
+    public GameObject Hpbar;
 
     // sat thuong
     [SerializeField] protected float stayDamage = 0.5f;
@@ -17,6 +18,8 @@ public abstract class Enemy : MonoBehaviour
     // animation
     Animator animator;
     [SerializeField] protected float attackRange = 1f;
+    private float attackTimer = 0f;
+    [SerializeField] private float attackCooldown = 1.5f;
 
     // them bien kiem soat kich hoat
     protected bool isActive = false;
@@ -53,10 +56,12 @@ public abstract class Enemy : MonoBehaviour
 
     protected void attackPlayer()
     {
-        float distance = Vector3.Distance(transform.position, player.transform.position);
-        if (distance <= attackRange)
+        float distance = Vector2.Distance(transform.position, player.transform.position);
+        attackTimer += Time.deltaTime;
+        if (distance <= attackRange && attackTimer >= attackCooldown)
         {
             animator.SetBool("isAttack", true);
+            attackTimer = 0f;
         }
         else
         {
@@ -79,8 +84,9 @@ public abstract class Enemy : MonoBehaviour
         updateHpBar();
         if (currentHp <= 0)
         {
-            animator.SetBool("isDying", true);
-            Die();
+            Hpbar.SetActive(false);
+            isActive = false;
+            animator.SetTrigger("Die");
         }
     }
 

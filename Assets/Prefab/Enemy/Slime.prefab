@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 716871143671931990}
   - component: {fileID: 7155784540683725917}
   - component: {fileID: 3646228679557205680}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -79,8 +79,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1596854371
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 4320010084133899996, guid: 52d40d1d463a123498d838dd108b712a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -181,9 +181,11 @@ MonoBehaviour:
   enemyMovementSpeed: 3
   maxHp: 50
   hpBar: {fileID: 8512396325462710973}
+  Hpbar: {fileID: 1829649376616055474}
   stayDamage: 0.1
   enterDamage: 10
   attackRange: 1
+  attackCooldown: 0
   slimeLiquit: {fileID: 4280187436818280987, guid: bc353d43bd511434db9655d6ee935051, type: 3}
 --- !u!95 &7155784540683725917
 Animator:
@@ -261,9 +263,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1214135684594526389}
     m_Modifications:
+    - target: {fileID: 3168509268748355706, guid: 627b4851ab4f5ff46b29316f2c4e96a3, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3507961276696201588, guid: 627b4851ab4f5ff46b29316f2c4e96a3, type: 3}
       propertyPath: m_Name
       value: Hpbar
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507961276696201588, guid: 627b4851ab4f5ff46b29316f2c4e96a3, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6911032015805550971, guid: 627b4851ab4f5ff46b29316f2c4e96a3, type: 3}
       propertyPath: m_Color.b
@@ -357,11 +367,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8500178486689113369, guid: 627b4851ab4f5ff46b29316f2c4e96a3, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 627b4851ab4f5ff46b29316f2c4e96a3, type: 3}
+--- !u!1 &1829649376616055474 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3507961276696201588, guid: 627b4851ab4f5ff46b29316f2c4e96a3, type: 3}
+  m_PrefabInstance: {fileID: 3011483578576571334}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4664026299257578817 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7598420770333224583, guid: 627b4851ab4f5ff46b29316f2c4e96a3, type: 3}
