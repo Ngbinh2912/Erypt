@@ -3,10 +3,10 @@ using UnityEngine;
 public class DoorTrigger : MonoBehaviour
 {
     public EnemySpawner enemySpawner;
-    public Collider2D exitDoorCollider; 
-    public SpriteRenderer exitDoorRenderer; 
+    public Collider2D exitDoorCollider;
+    public SpriteRenderer exitDoorRenderer;
 
-    private SpriteRenderer spriteRenderer; 
+    private SpriteRenderer spriteRenderer;
     private Collider2D doorCollider;
     private bool triggered = false;
     private bool playerHasPassed = false;
@@ -25,7 +25,6 @@ public class DoorTrigger : MonoBehaviour
         if (exitDoorRenderer != null)
             exitDoorRenderer.enabled = false;
 
-
         if (enemySpawner != null)
             enemySpawner.onAllEnemiesDefeated += UnlockDoors;
     }
@@ -37,14 +36,8 @@ public class DoorTrigger : MonoBehaviour
             triggered = true;
             playerHasPassed = true;
 
-
-            if (enemySpawner != null)
-                enemySpawner.ActivateAllEnemies();
-
-
             doorCollider.isTrigger = false;
             spriteRenderer.enabled = true;
-
 
             if (exitDoorCollider != null)
                 exitDoorCollider.isTrigger = false;

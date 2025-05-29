@@ -202,12 +202,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMovementSpeed: 3
   maxHp: 50
-  hpBar: {fileID: 7549579444766018582}
-  Hpbar: {fileID: 541379390892807193}
   stayDamage: 0.5
   enterDamage: 10
   attackRange: 1
   attackCooldown: 1
+  visionRange: 7
+  hpBar: {fileID: 7549579444766018582}
+  Hpbar: {fileID: 541379390892807193}
+  wanderRadius: 2
+  wanderDelay: 1
   explosionPrefabs: {fileID: 6736741873673453840, guid: d0288a6980e4206468386be866de1a99, type: 3}
 --- !u!61 &7041462756436195951
 BoxCollider2D:

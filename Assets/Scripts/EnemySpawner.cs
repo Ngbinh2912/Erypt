@@ -5,9 +5,8 @@ using System;
 public class EnemySpawner : MonoBehaviour
 {
     public GroundScanner groundScanner;
-    public DoorTrigger doorTrigger; // lien ket voi cua vao
+    public DoorTrigger doorTrigger;
     public List<EnemySpawnInfo> tier1Enemies, tier2Enemies, tier3Enemies;
-
 
     private List<GameObject> spawnedEnemies = new List<GameObject>();
     private List<Vector3> validSpawnPositions;
@@ -31,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 Vector3 spawnPos = validSpawnPositions[UnityEngine.Random.Range(0, validSpawnPositions.Count)];
                 GameObject enemy = Instantiate(info.enemyPrefab, spawnPos, Quaternion.identity);
-                enemy.SetActive(false);
+                enemy.SetActive(true);
 
                 var enemyComponent = enemy.GetComponent<Enemy>();
                 if (enemyComponent != null)
@@ -50,7 +49,6 @@ public class EnemySpawner : MonoBehaviour
 
         if (spawnedEnemies.Count == 0)
         {
-
             if (doorTrigger != null)
             {
                 doorTrigger.UnlockDoors();
@@ -59,18 +57,4 @@ public class EnemySpawner : MonoBehaviour
             onAllEnemiesDefeated?.Invoke();
         }
     }
-
-    public void ActivateAllEnemies()
-    {
-        foreach (var enemy in spawnedEnemies)
-        {
-            enemy.SetActive(true);
-            var enemyComponent = enemy.GetComponent<Enemy>();
-            if (enemyComponent != null)
-            {
-                enemyComponent.ActivateEnemy(); 
-            }
-        }
-    }
-
 }
