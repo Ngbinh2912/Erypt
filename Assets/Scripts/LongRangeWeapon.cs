@@ -7,11 +7,11 @@ public class LongRangeWeapon : MonoBehaviour
 {
     public GameObject bullet;
     public Transform firePos;
-    public float TimeBtwFire = 0.5f;
+    public float TimeBtwFire = 0.2f;
     public float bulletForce;
 
     public int currentAmmo;
-    private int maxAmmo = 5;
+    private int maxAmmo = 12;
 
     private float timeBtwFire;
 

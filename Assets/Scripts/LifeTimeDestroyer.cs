@@ -3,7 +3,7 @@ using UnityEngine;
 public class LifeTimeDestroyer : MonoBehaviour
 {
 
-    public float lifeTime = 1f;
+    public float lifeTime = 5f;
     [SerializeField] private float damage = 10f;
     [SerializeField] GameObject bloodAnimation;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
