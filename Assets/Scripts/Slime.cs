@@ -30,7 +30,7 @@ public class Slime : Enemy
 
     protected override void Die()
     {
-        if(slimeLiquit != null)
+        if(slimeLiquit != null && Random.value <= 0.3f)
         {
             GameObject dropAttribute = Instantiate(slimeLiquit, transform.position, Quaternion.identity);
             Destroy(dropAttribute, 5f);

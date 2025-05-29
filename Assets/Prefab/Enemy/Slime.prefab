@@ -180,12 +180,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMovementSpeed: 3
   maxHp: 50
-  hpBar: {fileID: 8512396325462710973}
-  Hpbar: {fileID: 1829649376616055474}
   stayDamage: 0.1
   enterDamage: 10
   attackRange: 1
   attackCooldown: 0
+  visionRange: 5
+  hpBar: {fileID: 8512396325462710973}
+  Hpbar: {fileID: 1829649376616055474}
+  wanderRadius: 4
+  wanderDelay: 3
   slimeLiquit: {fileID: 4280187436818280987, guid: bc353d43bd511434db9655d6ee935051, type: 3}
 --- !u!95 &7155784540683725917
 Animator:

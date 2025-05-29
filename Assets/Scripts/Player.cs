@@ -122,6 +122,13 @@ public class Player : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void Heal(float amount)
+    {
+        currentHp += amount;
+        currentHp = Mathf.Clamp(currentHp, 0, maxHp);
+        updateHpBar();
+    }
+
     protected private void updateHpBar()
     {
         if (hpBar != null)
