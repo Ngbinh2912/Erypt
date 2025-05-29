@@ -1,52 +1,71 @@
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D), typeof(SpriteRenderer))]
 public class DoorTrigger : MonoBehaviour
 {
     public EnemySpawner enemySpawner;
+    public Collider2D exitDoorCollider; 
+    public SpriteRenderer exitDoorRenderer; 
 
+    private SpriteRenderer spriteRenderer; 
+    private Collider2D doorCollider;
     private bool triggered = false;
-    private BoxCollider2D doorCollider;
-    private SpriteRenderer doorRenderer;
-
-    private Color transparentColor = new Color(1f, 1f, 1f, 0f); // cua trong suot
-    private Color visibleColor = Color.white; // cua hien hinh
+    private bool playerHasPassed = false;
 
     private void Start()
     {
-        doorCollider = GetComponent<BoxCollider2D>();
-        doorRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        doorCollider = GetComponent<Collider2D>();
 
-        // Dat cua o che do trong suot luc dau
-        if (doorRenderer != null)
-        {
-            doorRenderer.color = transparentColor;
-        }
-    }
+        spriteRenderer.enabled = false;
+        doorCollider.isTrigger = true;
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        // Khi nguoi choi cham vao cua lan dau
-        if (!triggered && other.CompareTag("Player"))
-        {
-            triggered = true;
-            enemySpawner.ActivateAllEnemies();
-            Debug.Log("Enemies activated!");
-        }
+        if (exitDoorCollider != null)
+            exitDoorCollider.isTrigger = true;
+
+        if (exitDoorRenderer != null)
+            exitDoorRenderer.enabled = false;
+
+
+        if (enemySpawner != null)
+            enemySpawner.onAllEnemiesDefeated += UnlockDoors;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        // Khi nguoi choi da di qua hoan toan
-        if (triggered && other.CompareTag("Player"))
+        if (!triggered && other.CompareTag("Player"))
         {
-            if (doorCollider != null)
-                doorCollider.isTrigger = false;
+            triggered = true;
+            playerHasPassed = true;
 
-            if (doorRenderer != null)
-                doorRenderer.color = visibleColor;
 
-            Debug.Log("Door closed after player passed through.");
+            if (enemySpawner != null)
+                enemySpawner.ActivateAllEnemies();
+
+
+            doorCollider.isTrigger = false;
+            spriteRenderer.enabled = true;
+
+
+            if (exitDoorCollider != null)
+                exitDoorCollider.isTrigger = false;
+
+            if (exitDoorRenderer != null)
+                exitDoorRenderer.enabled = true;
+        }
+    }
+
+    public void UnlockDoors()
+    {
+        if (playerHasPassed)
+        {
+            doorCollider.isTrigger = true;
+            spriteRenderer.enabled = false;
+
+            if (exitDoorCollider != null)
+                exitDoorCollider.isTrigger = true;
+
+            if (exitDoorRenderer != null)
+                exitDoorRenderer.enabled = false;
         }
     }
 }
