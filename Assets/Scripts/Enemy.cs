@@ -23,10 +23,10 @@ public abstract class Enemy : MonoBehaviour
     public GameObject Hpbar;
 
     protected Player player;
-    private float attackTimer = 0f;
-    private Animator animator;
+    protected float attackTimer = 0f;
+    protected Animator animator;
 
-    private bool SawPlayer = false;
+    protected bool SawPlayer = false;
     // lang thang
     private Vector2 spawnPosition;
     private Vector2 wanderTarget;
@@ -37,7 +37,7 @@ public abstract class Enemy : MonoBehaviour
 
     public event Action<Enemy> OnEnemyDied;
 
-    private bool isDead = false;
+    protected bool isDead = false;
 
     protected virtual void Start()
     {
