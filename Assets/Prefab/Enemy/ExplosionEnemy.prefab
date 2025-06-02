@@ -206,7 +206,7 @@ MonoBehaviour:
   enterDamage: 10
   attackRange: 1
   attackCooldown: 1
-  visionRange: 7
+  visionRange: 10
   hpBar: {fileID: 7549579444766018582}
   Hpbar: {fileID: 541379390892807193}
   wanderRadius: 2

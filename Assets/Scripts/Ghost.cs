@@ -3,19 +3,23 @@ using UnityEngine;
 public class Ghost : Enemy
 {
     [Header("Invisibility Settings")]
-    [SerializeField] private float invisibleDuration = 2f;  // Thoi gian ghost an
-    [SerializeField] private float visibleDuration = 4f;    // Thoi gian ghost hien thi
+    [SerializeField] private float invisibleDuration = 2f;  
+    [SerializeField] private float visibleDuration = 4f;    
 
-    private bool isInvisible = false;   // Trang thai ghost an
+    private bool isInvisible = false;
     private float invTimer = 0f;
     private float visTimer = 0f;
 
     [Header("Projectile Settings")]
-    [SerializeField] private GameObject projectilePrefab;   // Prefab dan
-    [SerializeField] private float projectileSpeed = 5f;      // Toc do dan
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private float projectileSpeed = 5f;
 
     [Header("Distance Settings")]
-    [SerializeField] private float preferredDistance = 3f;    // Khoang cach uu tien giua ghost va player
+    [SerializeField] private float preferredDistance = 3f;
+
+    [Header("Fire Position")]
+    [SerializeField] private Transform firePos;
+
 
     private Collider2D[] allColliders;
     private SpriteRenderer[] allRenderers;
@@ -50,22 +54,17 @@ public class Ghost : Enemy
     {
         if (isInvisible)
         {
-            // Ghost dang an
             invTimer += Time.deltaTime;
             if (invTimer >= invisibleDuration)
             {
-                // Ket thuc thoi gian an -> ghost hien thi
                 isInvisible = false;
                 invTimer = 0f;
-                // Khi ghost hien thi, se chay hoat an Appear roi chuyen sang Idle
                 animator.SetTrigger("Appear");
             }
         }
         else
         {
-            // Ghost dang hien thi (dang Idle)
             visTimer += Time.deltaTime;
-            // Khi het thoi gian hien thi va cooldown, ghost chuyen sang trang thai an
             if (visTimer >= visibleDuration)
             {
                 isInvisible = true;
@@ -109,16 +108,26 @@ public class Ghost : Enemy
         FlipEnemy();
 
         attackTimer += Time.deltaTime;
+
         if (!isInvisible && attackTimer >= attackCooldown)
         {
             attackTimer = 0f;
-            AttackInCircle();
+            animator.SetBool("isAttacking", true);
         }
+    }
+
+    public void PerformAttack()
+    {
+        if (isInvisible || isDead)
+            return;
+
+        AttackInCircle();
+        animator.SetBool("isAttacking", false);
     }
 
     private void AttackInCircle()
     {
-        int numberOfProjectiles = Random.Range(5, 11); 
+        int numberOfProjectiles = Random.Range(5, 9);
         float angleStep = 360f / numberOfProjectiles;
         float angle = 0f;
 
@@ -128,8 +137,13 @@ public class Ghost : Enemy
             float projectileDirY = Mathf.Sin(angle * Mathf.Deg2Rad);
             Vector2 projectileDir = new Vector2(projectileDirX, projectileDirY).normalized;
 
-            GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            projectile.GetComponent<Rigidbody2D>().linearVelocity = projectileDir * projectileSpeed;
+            GameObject projectile = Instantiate(projectilePrefab, firePos.position, Quaternion.identity);
+
+            EnemyProjectile ep = projectile.GetComponent<EnemyProjectile>();
+            if (ep != null)
+            {
+                ep.SetDirection(projectileDir, projectileSpeed);
+            }
 
             angle += angleStep;
         }

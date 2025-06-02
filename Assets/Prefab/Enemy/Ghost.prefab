@@ -36,6 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7326547527246983649}
+  - {fileID: 4411950029752294008}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &341251635592146252
@@ -252,16 +253,48 @@ MonoBehaviour:
   enterDamage: 10
   attackRange: 1
   attackCooldown: 1.5
-  visionRange: 5
+  visionRange: 7
   hpBar: {fileID: 5996200160073010717}
   Hpbar: {fileID: 4355239739313772050}
   wanderRadius: 2
   wanderDelay: 2
-  invisibleDuration: 2
-  visibleDuration: 4
+  invisibleDuration: 4
+  visibleDuration: 3
   projectilePrefab: {fileID: 2816214218942736350, guid: 88fe06914551b2447ac9698336ec11d4, type: 3}
   projectileSpeed: 5
   preferredDistance: 3
+  firePos: {fileID: 4411950029752294008}
+--- !u!1 &9092172034544340406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4411950029752294008}
+  m_Layer: 8
+  m_Name: FirePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4411950029752294008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9092172034544340406}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 811393074940149890}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &927217357682368358
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -281,6 +314,18 @@ PrefabInstance:
     - target: {fileID: 3507961276696201588, guid: 627b4851ab4f5ff46b29316f2c4e96a3, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911032015805550971, guid: 627b4851ab4f5ff46b29316f2c4e96a3, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911032015805550971, guid: 627b4851ab4f5ff46b29316f2c4e96a3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.09803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911032015805550971, guid: 627b4851ab4f5ff46b29316f2c4e96a3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8627451
       objectReference: {fileID: 0}
     - target: {fileID: 7598420770333224583, guid: 627b4851ab4f5ff46b29316f2c4e96a3, type: 3}
       propertyPath: m_Pivot.x
