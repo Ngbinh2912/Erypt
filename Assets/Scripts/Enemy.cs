@@ -16,17 +16,17 @@ public abstract class Enemy : MonoBehaviour
     [Header("Attack Settings")]
     [SerializeField] protected float attackRange = 1f;
     [SerializeField] protected float attackCooldown = 1.5f;
-    [SerializeField] protected float visionRange = 5f; // tam nhin
+    [SerializeField] protected float visionRange; // tam nhin
 
     [Header("Health Bar")]
     [SerializeField] private Image hpBar;
     public GameObject Hpbar;
 
     protected Player player;
-    private float attackTimer = 0f;
-    private Animator animator;
+    protected float attackTimer = 0f;
+    protected Animator animator;
 
-    private bool SawPlayer = false;
+    protected bool SawPlayer = false;
     // lang thang
     private Vector2 spawnPosition;
     private Vector2 wanderTarget;
@@ -37,7 +37,7 @@ public abstract class Enemy : MonoBehaviour
 
     public event Action<Enemy> OnEnemyDied;
 
-    private bool isDead = false;
+    protected bool isDead = false;
 
     protected virtual void Start()
     {
@@ -61,14 +61,14 @@ public abstract class Enemy : MonoBehaviour
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
-        if (distanceToPlayer >= visionRange && !SawPlayer)
-        {
-            Wander();
-        }
-        else
+        if (SawPlayer || (distanceToPlayer <= visionRange && CanSeePlayer()))
         {
             SawPlayer = true;
             MoveToPlayer();
+        }
+        else
+        {
+            Wander();
         }
     }
 
@@ -122,6 +122,22 @@ public abstract class Enemy : MonoBehaviour
         Vector2 randomOffset = UnityEngine.Random.insideUnitCircle * wanderRadius;
         wanderTarget = spawnPosition + randomOffset;
     }
+
+    protected virtual bool CanSeePlayer()
+    {
+        Vector2 directionToPlayer = (player.transform.position - transform.position).normalized;
+        float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer, distanceToPlayer, LayerMask.GetMask("Obstacle", "Player"));
+
+        if (hit.collider != null)
+        {
+            return hit.collider.gameObject.layer == LayerMask.NameToLayer("Player");
+        }
+
+        return false;
+    }
+
 
     public virtual void takeDamage(float damage)
     {
