@@ -114,13 +114,26 @@ public abstract class Enemy : MonoBehaviour
             wanderTimer = 0f;
         }
 
+        Vector2 oldPosition = transform.position;
         transform.position = Vector2.MoveTowards(transform.position, wanderTarget, (enemyMovementSpeed * 0.5f) * Time.deltaTime);
+
+        Vector2 movement = (Vector2)transform.position - oldPosition;
+        if (movement.x != 0)
+        {
+            FlipByDirection(movement.x);
+        }
     }
 
     private void PickNewWanderTarget()
     {
         Vector2 randomOffset = UnityEngine.Random.insideUnitCircle * wanderRadius;
         wanderTarget = spawnPosition + randomOffset;
+    }
+
+    protected void FlipByDirection(float directionX)
+    {
+        float scaleX = directionX < 0 ? 1f : -1f;
+        transform.localScale = new Vector3(scaleX, 1f, 1f);
     }
 
     protected virtual bool CanSeePlayer()

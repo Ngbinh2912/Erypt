@@ -412,13 +412,22 @@ MonoBehaviour:
   doorTrigger: {fileID: 7064135865430181395}
   tier1Enemies:
   - enemyPrefab: {fileID: 589901672233984239, guid: 732da223b75126b4b82974bd3633221d, type: 3}
-    minCount: 1
-    maxCount: 1
+    minCount: 0
+    maxCount: 0
+  - enemyPrefab: {fileID: 922589990376403094, guid: 89dfe9850335dc24bb1f0db0b02ab284, type: 3}
+    minCount: 0
+    maxCount: 0
+  - enemyPrefab: {fileID: 1048284393552588470, guid: 7e657b5436a59e04483b8dcf13301d27, type: 3}
+    minCount: 0
+    maxCount: 0
   tier2Enemies:
   - enemyPrefab: {fileID: 3324128195469055755, guid: e14dd1362abe7a845b5466b4c484005c, type: 3}
     minCount: 0
     maxCount: 0
-  tier3Enemies:
+  - enemyPrefab: {fileID: 4021792842827302533, guid: af6eea2c650d3044b88686b57002a341, type: 3}
+    minCount: 0
+    maxCount: 0
   - enemyPrefab: {fileID: 8481556455027727925, guid: 06c79113d499825478c6b3b2e9d7449c, type: 3}
     minCount: 0
     maxCount: 0
+  tier3Enemies: []

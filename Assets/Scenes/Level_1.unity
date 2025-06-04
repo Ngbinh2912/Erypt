@@ -13700,7 +13700,7 @@ GameObject:
   - component: {fileID: 734215120}
   - component: {fileID: 734215119}
   - component: {fileID: 734215118}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wallRoad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21362,24 +21362,60 @@ PrefabInstance:
       value: MapManager
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier2Enemies.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier1Enemies.Array.data[0].maxCount
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier1Enemies.Array.data[0].minCount
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier1Enemies.Array.data[1].maxCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier1Enemies.Array.data[1].minCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier1Enemies.Array.data[2].maxCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier1Enemies.Array.data[2].minCount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier2Enemies.Array.data[0].maxCount
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier2Enemies.Array.data[0].minCount
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier2Enemies.Array.data[1].maxCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier2Enemies.Array.data[1].minCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier2Enemies.Array.data[2].maxCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier2Enemies.Array.data[2].minCount
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier3Enemies.Array.data[0].maxCount
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier1Enemies.Array.data[0].visionRange
@@ -21389,6 +21425,14 @@ PrefabInstance:
       propertyPath: tier2Enemies.Array.data[0].visionRange
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier2Enemies.Array.data[1].enemyPrefab
+      value: 
+      objectReference: {fileID: 4021792842827302533, guid: af6eea2c650d3044b88686b57002a341, type: 3}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier2Enemies.Array.data[2].enemyPrefab
+      value: 
+      objectReference: {fileID: 8481556455027727925, guid: 06c79113d499825478c6b3b2e9d7449c, type: 3}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier3Enemies.Array.data[0].visionRange
       value: 10
@@ -40033,6 +40077,30 @@ PrefabInstance:
     - target: {fileID: 507319962269295489, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: m_Name
       value: MapManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier1Enemies.Array.data[0].maxCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier1Enemies.Array.data[0].minCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier2Enemies.Array.data[0].maxCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier2Enemies.Array.data[0].minCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier3Enemies.Array.data[0].maxCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier3Enemies.Array.data[0].minCount
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5649398530661291337, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: m_LocalPosition.x

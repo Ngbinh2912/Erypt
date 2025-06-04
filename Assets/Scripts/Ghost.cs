@@ -3,8 +3,8 @@ using UnityEngine;
 public class Ghost : Enemy
 {
     [Header("Invisibility Settings")]
-    [SerializeField] private float invisibleDuration = 2f;  
-    [SerializeField] private float visibleDuration = 4f;    
+    [SerializeField] private float invisibleDuration = 2f;
+    [SerializeField] private float visibleDuration = 4f;
 
     private bool isInvisible = false;
     private float invTimer = 0f;
@@ -44,7 +44,10 @@ public class Ghost : Enemy
         else
         {
             SawPlayer = true;
-            MaintainDistanceAndAttack();
+            if (CanSeePlayer())
+            {
+                MaintainDistanceAndAttack();
+            }
         }
 
         HandleInvisibility();
