@@ -21367,7 +21367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier1Enemies.Array.data[0].maxCount
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier1Enemies.Array.data[0].minCount
@@ -21375,7 +21375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier1Enemies.Array.data[1].maxCount
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier1Enemies.Array.data[1].minCount
@@ -21383,7 +21383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier1Enemies.Array.data[2].maxCount
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier1Enemies.Array.data[2].minCount
@@ -21391,27 +21391,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier2Enemies.Array.data[0].maxCount
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier2Enemies.Array.data[0].minCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier2Enemies.Array.data[1].maxCount
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier2Enemies.Array.data[1].minCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier2Enemies.Array.data[2].maxCount
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier2Enemies.Array.data[2].minCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier3Enemies.Array.data[0].maxCount
