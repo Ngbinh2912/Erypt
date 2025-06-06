@@ -6,7 +6,10 @@ public class Skull : Enemy
     public GameObject bulletStrongPrefab;
     public Transform firePos;
 
+
+
     [SerializeField] private float preferredDistance = 6f;
+    [SerializeField] private GameObject PowerUp;
 
     private bool isEvolving = false;
     private bool evolved = false;
@@ -133,5 +136,15 @@ public class Skull : Enemy
         evolved = true;
 
         animator.SetBool("Idle2", true); 
+    }
+
+    protected override void Die()
+    {
+        if (PowerUp != null && Random.value <= 0.15f)
+        {
+            GameObject dropAttribute = Instantiate(PowerUp, transform.position, Quaternion.identity);
+            Destroy(dropAttribute, 7f);
+        }
+        base.Die();
     }
 }

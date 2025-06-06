@@ -1,24 +1,24 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 public class LongRangeWeapon : MonoBehaviour
 {
-    public GameObject bullet;
-    public Transform firePos;
-    public float TimeBtwFire = 0.2f;
-    public float bulletForce;
+    public GameObject bullet;               // prefab dan
+    public Transform firePos;               // vi tri ban
+    public float TimeBtwFire = 0.2f;        // thoi gian delay ban
+    public float bulletForce;               // luc ban dan
 
-    public int currentAmmo;
-    private int maxAmmo = 12;
+    public int currentAmmo;                 // so dan hien tai
+    private int maxAmmo = 12;               // dan toi da
 
     private float timeBtwFire;
 
-    public float timeReload = 2f;
+    public float timeReload = 2f;           // thoi gian nap dan
     private float timedelay;
     private bool isReloading = false;
 
+    public int bulletCount = 1;             // so vien dan ban lien tiep
+    public float timeBetweenShots = 0.1f;   // khoang cach thoi gian giua cac vien dan
 
     void Start()
     {
@@ -32,14 +32,15 @@ public class LongRangeWeapon : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && timeBtwFire < 0 && currentAmmo > 0 && !isReloading)
         {
-            FireBullet();
+            StartCoroutine(ShootBullets()); // ban nhieu dan lien tiep
         }
+
         ReloadAmmo();
     }
 
     void RotateWeapon()
     {
-        //lay vi tri chuot
+        // lay vi tri chuot
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 lookDir = mousePos - transform.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
@@ -49,7 +50,7 @@ public class LongRangeWeapon : MonoBehaviour
 
         if (transform.eulerAngles.z > 90 && transform.eulerAngles.z < 270)
         {
-            //thay doi huong xoay vu khi
+            // lat vu khi khi xoay nguoc
             transform.localScale = new Vector3(1, -1, 0);
         }
         else
@@ -58,15 +59,21 @@ public class LongRangeWeapon : MonoBehaviour
         }
     }
 
-    void FireBullet()
+    IEnumerator ShootBullets()
     {
         timeBtwFire = TimeBtwFire;
 
-        //tao ra vien dan
-        GameObject bulletTmp = Instantiate(bullet, firePos.position, Quaternion.identity);
+        for (int i = 0; i < bulletCount && currentAmmo > 0; i++)
+        {
+            // tao dan
+            GameObject bulletTmp = Instantiate(bullet, firePos.position, Quaternion.identity);
 
-        Rigidbody2D rb = bulletTmp.GetComponent<Rigidbody2D>();
-        rb.AddForce(transform.right * bulletForce, ForceMode2D.Impulse);
+            Rigidbody2D rb = bulletTmp.GetComponent<Rigidbody2D>();
+            rb.AddForce(transform.right * bulletForce, ForceMode2D.Impulse);
+
+            yield return new WaitForSeconds(timeBetweenShots); // delay giua cac vien dan
+        }
+
         currentAmmo--;
     }
 
@@ -86,5 +93,11 @@ public class LongRangeWeapon : MonoBehaviour
                 isReloading = false;
             }
         }
+    }
+
+    // ham duoc goi boi PowerUpBullet de tang so vien dan
+    public void IncreaseBulletCount(int amount)
+    {
+        bulletCount += amount;
     }
 }

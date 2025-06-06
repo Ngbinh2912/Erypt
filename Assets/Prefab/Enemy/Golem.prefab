@@ -249,7 +249,9 @@ MonoBehaviour:
   Hpbar: {fileID: 855351355802088956}
   wanderRadius: 3
   wanderDelay: 2
+  SpeedUp: {fileID: 1052029558815621304, guid: 15f081dc6e6d260469661ad6dd94d11a, type: 3}
   weaponCollider: {fileID: 3113048059535693971}
+  PowerUp: {fileID: 1367634740908984149, guid: a14c4fb94521ce14e8067f5c6b13f8de, type: 3}
 --- !u!61 &2479917284952304580
 BoxCollider2D:
   m_ObjectHideFlags: 0

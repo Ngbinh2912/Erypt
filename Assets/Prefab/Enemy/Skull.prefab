@@ -240,17 +240,19 @@ MonoBehaviour:
   maxHp: 80
   stayDamage: 0.5
   enterDamage: 10
-  attackRange: 5
+  attackRange: 10
   attackCooldown: 2
-  visionRange: 5
+  visionRange: 8
   hpBar: {fileID: 3091415109858843046}
   Hpbar: {fileID: 5017232741999428009}
   wanderRadius: 5
   wanderDelay: 3
+  SpeedUp: {fileID: 1052029558815621304, guid: 15f081dc6e6d260469661ad6dd94d11a, type: 3}
   bulletNormalPrefab: {fileID: 2816214218942736350, guid: 03b82f1061071ea4592d7b74b7d82d88, type: 3}
   bulletStrongPrefab: {fileID: 2816214218942736350, guid: 9a0b63b217e296c4c896486d85cceb77, type: 3}
   firePos: {fileID: 5289639005715382878}
   preferredDistance: 3
+  PowerUp: {fileID: 1367634740908984149, guid: a14c4fb94521ce14e8067f5c6b13f8de, type: 3}
 --- !u!95 &7649761434023489117
 Animator:
   serializedVersion: 7

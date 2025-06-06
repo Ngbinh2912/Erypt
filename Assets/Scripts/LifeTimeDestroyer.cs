@@ -32,5 +32,9 @@ public class LifeTimeDestroyer : MonoBehaviour
 
             Destroy(gameObject);
         }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

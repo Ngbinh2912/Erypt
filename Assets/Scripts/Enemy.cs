@@ -35,6 +35,9 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float wanderDelay = 2f;
     private float wanderTimer = 0f;
 
+    [Header("Buff")]
+    [SerializeField] protected GameObject SpeedUp;
+
     public event Action<Enemy> OnEnemyDied;
 
     protected bool isDead = false;
@@ -169,6 +172,11 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void Die()
     {
+        if (SpeedUp != null && UnityEngine.Random.value <= 0.15f)
+        {
+            GameObject dropAttribute = Instantiate(SpeedUp, transform.position, Quaternion.identity);
+            Destroy(dropAttribute, 7f);
+        }
         OnEnemyDied?.Invoke(this);
         Destroy(gameObject);
     }

@@ -211,6 +211,7 @@ MonoBehaviour:
   Hpbar: {fileID: 541379390892807193}
   wanderRadius: 2
   wanderDelay: 1
+  SpeedUp: {fileID: 1052029558815621304, guid: 15f081dc6e6d260469661ad6dd94d11a, type: 3}
   explosionPrefabs: {fileID: 6736741873673453840, guid: d0288a6980e4206468386be866de1a99, type: 3}
 --- !u!61 &7041462756436195951
 BoxCollider2D:
