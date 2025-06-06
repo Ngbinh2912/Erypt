@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8679343140917348463}
   - component: {fileID: 4704569960061145026}
   - component: {fileID: 845926754127867278}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpeedUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1596854371
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 77077ad6096c0a54d9c99e2ad7128a0b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
