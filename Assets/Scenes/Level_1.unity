@@ -18210,6 +18210,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 0, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 149
+      m_TileSpriteIndex: 149
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 1, y: 0, z: 0}
     second:
       serializedVersion: 2
@@ -20180,7 +20190,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 7365c35ea30b24e4c8c07151e651592a, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 6732b3e1f9441554aa97973db4258303, type: 2}
-  - m_RefCount: 2
+  - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 7366cb7d26c8da74b9cf87cc0ccdabe7, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: b92254072cf84024f874f2e5724129ad, type: 2}
@@ -20891,7 +20901,7 @@ Tilemap:
     m_Data: {fileID: 1535306742, guid: 387fec7484414a749ade87eb9e768094, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 210069876, guid: 387fec7484414a749ade87eb9e768094, type: 3}
-  - m_RefCount: 2
+  - m_RefCount: 3
     m_Data: {fileID: 1532257432, guid: 387fec7484414a749ade87eb9e768094, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: -1641653620, guid: 387fec7484414a749ade87eb9e768094, type: 3}
@@ -21304,7 +21314,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -1895605410, guid: 387fec7484414a749ade87eb9e768094, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 531
+  - m_RefCount: 532
     m_Data:
       e00: 1
       e01: 0
@@ -21323,7 +21333,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 531
+  - m_RefCount: 532
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -21367,47 +21377,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier1Enemies.Array.data[0].maxCount
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier1Enemies.Array.data[0].minCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
-      propertyPath: tier1Enemies.Array.data[1].maxCount
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
-      propertyPath: tier1Enemies.Array.data[1].minCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
-      propertyPath: tier1Enemies.Array.data[2].maxCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
-      propertyPath: tier1Enemies.Array.data[2].minCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
-      propertyPath: tier2Enemies.Array.data[0].maxCount
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
-      propertyPath: tier2Enemies.Array.data[0].minCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
-      propertyPath: tier2Enemies.Array.data[1].maxCount
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier1Enemies.Array.data[1].maxCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier1Enemies.Array.data[1].minCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier1Enemies.Array.data[2].maxCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier1Enemies.Array.data[2].minCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier2Enemies.Array.data[0].maxCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier2Enemies.Array.data[0].minCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier2Enemies.Array.data[1].maxCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier2Enemies.Array.data[1].minCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier2Enemies.Array.data[2].maxCount
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier2Enemies.Array.data[2].minCount
@@ -40080,19 +40090,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier1Enemies.Array.data[0].maxCount
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier1Enemies.Array.data[0].minCount
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier1Enemies.Array.data[1].maxCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier1Enemies.Array.data[2].maxCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier1Enemies.Array.data[2].minCount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier2Enemies.Array.data[0].maxCount
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier2Enemies.Array.data[0].minCount
-      value: 0
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier2Enemies.Array.data[2].maxCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: tier2Enemies.Array.data[2].minCount
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4598104985876390499, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: tier3Enemies.Array.data[0].maxCount
