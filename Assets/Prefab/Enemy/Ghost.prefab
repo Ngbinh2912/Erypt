@@ -258,6 +258,7 @@ MonoBehaviour:
   Hpbar: {fileID: 4355239739313772050}
   wanderRadius: 2
   wanderDelay: 2
+  SpeedUp: {fileID: 1052029558815621304, guid: 15f081dc6e6d260469661ad6dd94d11a, type: 3}
   invisibleDuration: 4
   visibleDuration: 3
   projectilePrefab: {fileID: 2816214218942736350, guid: 88fe06914551b2447ac9698336ec11d4, type: 3}

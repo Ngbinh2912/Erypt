@@ -3,6 +3,7 @@
 public class Golem : Enemy
 {
     [SerializeField] private Collider2D weaponCollider;
+    [SerializeField] private GameObject PowerUp;
 
     protected override void Start()
     {
@@ -41,5 +42,15 @@ public class Golem : Enemy
                 player.takeDamage(stayDamage);
             }
         }
+    }
+
+    protected override void Die()
+    {
+        if (PowerUp != null && Random.value <= 0.1f)
+        {
+            GameObject dropAttribute = Instantiate(PowerUp, transform.position, Quaternion.identity);
+            Destroy(dropAttribute, 7f);
+        }
+        base.Die();
     }
 }

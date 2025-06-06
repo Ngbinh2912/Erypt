@@ -189,6 +189,7 @@ MonoBehaviour:
   Hpbar: {fileID: 1829649376616055474}
   wanderRadius: 4
   wanderDelay: 3
+  SpeedUp: {fileID: 1052029558815621304, guid: 15f081dc6e6d260469661ad6dd94d11a, type: 3}
   slimeLiquit: {fileID: 4280187436818280987, guid: bc353d43bd511434db9655d6ee935051, type: 3}
 --- !u!95 &7155784540683725917
 Animator:

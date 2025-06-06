@@ -51,6 +51,7 @@ public class DoorTrigger : MonoBehaviour
     {
         if (playerHasPassed)
         {
+            Debug.Log("All enemies defeated");
             doorCollider.isTrigger = true;
             spriteRenderer.enabled = false;
 

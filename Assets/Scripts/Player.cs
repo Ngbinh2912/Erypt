@@ -7,6 +7,11 @@ public class Player : MonoBehaviour
 {
     public float speed = 5f;
     private float dashSpeed = 20f;
+    private float originalSpeed;
+    private Coroutine speedBoostCoroutine;
+
+    private TrailRenderer trail;
+
     private float dashDuration = 0.2f;
     private bool isDashing = false;
     public float dashCooldown; // Cooldown 
@@ -37,6 +42,9 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        trail = GetComponent<TrailRenderer>();
+        if (trail != null)
+            trail.enabled = false;
 
         currentHp = maxHp;
 
@@ -101,6 +109,29 @@ public class Player : MonoBehaviour
         Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
 
         StopDashEffect();
+    }
+
+    public void ApplySpeedBoost(float multiplier, float duration)
+    {
+        if (speedBoostCoroutine != null)
+        {
+            StopCoroutine(speedBoostCoroutine);
+        }
+        speedBoostCoroutine = StartCoroutine(SpeedBoostRoutine(multiplier, duration));
+    }
+
+    private IEnumerator SpeedBoostRoutine(float multiplier, float duration)
+    {
+        originalSpeed = speed;
+        speed *= multiplier;
+
+        if (trail != null) trail.enabled = true;
+
+        yield return new WaitForSeconds(duration);
+
+        speed = originalSpeed;
+        if (trail != null) trail.enabled = false;
+        speedBoostCoroutine = null;
     }
 
     public void takeDamage(float damage)
