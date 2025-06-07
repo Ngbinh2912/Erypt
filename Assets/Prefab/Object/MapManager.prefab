@@ -110,7 +110,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1312241927
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
   m_Color: {r: 0.7132075, g: 0.25702384, b: 0.25702384, a: 0.36862746}
@@ -290,7 +290,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1312241927
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
   m_Color: {r: 0.7132075, g: 0.25702384, b: 0.25702384, a: 0.36862746}
@@ -410,6 +410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundScanner: {fileID: 6787527735449415482}
   doorTrigger: {fileID: 7064135865430181395}
+  specialSpawnPoint: {fileID: 0}
   tier1Enemies:
   - enemyPrefab: {fileID: 589901672233984239, guid: 732da223b75126b4b82974bd3633221d, type: 3}
     minCount: 0
@@ -430,4 +431,10 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 8481556455027727925, guid: 06c79113d499825478c6b3b2e9d7449c, type: 3}
     minCount: 0
     maxCount: 0
-  tier3Enemies: []
+  tier3Enemies:
+  - enemyPrefab: {fileID: 5030809666108153315, guid: 117aa70443028ce49bf5ccbf2fbda05f, type: 3}
+    minCount: 0
+    maxCount: 0
+  - enemyPrefab: {fileID: 4305558992201185005, guid: f3c7dd81e705f4f46a7978903aae8f6e, type: 3}
+    minCount: 0
+    maxCount: 0
