@@ -52,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -66,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 8
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      arm_projectile_glowing_0: 95044405116505353
+      arm_projectile_glowing_1: 5053551332890923903
+      arm_projectile_glowing_2: 959987844630726459
+      arm_projectile_glowing_3: 8066067344937695706
+      arm_projectile_glowing_4: 8081469474457304709
+      arm_projectile_glowing_5: -4212147560741854503
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
