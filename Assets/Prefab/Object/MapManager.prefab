@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 5649398530661291337}
   - component: {fileID: 1177853625050978955}
   - component: {fileID: 6745489143520729092}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ExitDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,9 +432,9 @@ MonoBehaviour:
     minCount: 0
     maxCount: 0
   tier3Enemies:
-  - enemyPrefab: {fileID: 5030809666108153315, guid: 117aa70443028ce49bf5ccbf2fbda05f, type: 3}
+  - enemyPrefab: {fileID: 8156913861463081703, guid: cf6d757c8e0d84d41988c0f9ff2dcfa5, type: 3}
     minCount: 0
     maxCount: 0
-  - enemyPrefab: {fileID: 4305558992201185005, guid: f3c7dd81e705f4f46a7978903aae8f6e, type: 3}
+  - enemyPrefab: {fileID: 6736636082293265060, guid: 60c81a90baa401844b4f85a561ccaf30, type: 3}
     minCount: 0
     maxCount: 0

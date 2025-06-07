@@ -166,6 +166,7 @@ public abstract class Enemy : MonoBehaviour
         {
             isDead = true;
             Hpbar?.SetActive(false);
+            OnEnemyDied?.Invoke(this);
             animator.SetTrigger("Die");
         }
     }
@@ -177,7 +178,6 @@ public abstract class Enemy : MonoBehaviour
             GameObject dropAttribute = Instantiate(SpeedUp, transform.position, Quaternion.identity);
             Destroy(dropAttribute, 7f);
         }
-        OnEnemyDied?.Invoke(this);
         Destroy(gameObject);
     }
 

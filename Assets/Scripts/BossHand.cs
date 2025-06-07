@@ -6,6 +6,10 @@ public class BossHand : MonoBehaviour
     public float damage = 5f;
     public float lifeTime = 3f;
 
+    public GameObject MiniEx;
+    public GameObject Explosion;
+    public Transform ExPos;
+
     private Vector2 moveDirection;
 
     public void SetDirection(Vector2 dir)
@@ -32,10 +36,18 @@ public class BossHand : MonoBehaviour
             {
                 player.takeDamage(damage);
             }
+            if (MiniEx != null)
+            {
+                GameObject dropAttribute = Instantiate(MiniEx, ExPos.position, Quaternion.identity);
+            }
             Destroy(gameObject);
         }
         else if (other.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
         {
+            if (Explosion != null)
+            {
+                GameObject dropAttribute = Instantiate(Explosion, ExPos.position, Quaternion.identity);
+            }
             Destroy(gameObject);
         }
     }

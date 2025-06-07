@@ -79,7 +79,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1596854371
-  m_SortingLayer: 4
+  m_SortingLayer: 2
   m_SortingOrder: -1
   m_Sprite: {fileID: 4740742658319907719, guid: d4f2f936f814df24fb7559370c465cdc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -210,7 +210,7 @@ MonoBehaviour:
   Hpbar: {fileID: 4916417843706309690}
   wanderRadius: 2
   wanderDelay: 2
-  SpeedUp: {fileID: 0}
+  SpeedUp: {fileID: 1052029558815621304, guid: 15f081dc6e6d260469661ad6dd94d11a, type: 3}
 --- !u!1001 &8400435734121293134
 PrefabInstance:
   m_ObjectHideFlags: 0
