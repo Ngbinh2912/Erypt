@@ -8,6 +8,7 @@ TagManager:
   - enemyWeapon
   - Explosion
   - slimeItem
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
@@ -65,6 +66,9 @@ TagManager:
     locked: 0
   - name: Explosion
     uniqueID: 770485607
+    locked: 0
+  - name: 
+    uniqueID: 3093498863
     locked: 0
   m_RenderingLayers:
   - Default
