@@ -10,6 +10,8 @@ public class BossEnemy : Enemy
     [SerializeField] private float hpValue = 50f;
     [SerializeField] private GameObject miniEnemy;
     [SerializeField] private float skillCoolDown = 2f;
+    [SerializeField] private Vector3 PortalPos;
+    [SerializeField] private GameObject Portal;
 
     private float nextSkillTime = 0f;
     private Animator animator;
@@ -18,6 +20,7 @@ public class BossEnemy : Enemy
     {
         base.Start();
         animator = GetComponent<Animator>();
+        PortalPos = transform.position;
     }
 
     protected override void Update()
@@ -26,7 +29,7 @@ public class BossEnemy : Enemy
         if (player == null) return;
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
-        if (distanceToPlayer <= attackRange * 1.5f && Time.time >= nextSkillTime)
+        if (distanceToPlayer <= attackRange * 1.5f && Time.time >= nextSkillTime && CanSeePlayer())
         {
             UseSkill();
         }
@@ -111,5 +114,14 @@ public class BossEnemy : Enemy
     {
         nextSkillTime = Time.time + skillCoolDown;
         ChooseSkill();
+    }
+
+    protected override void Die()
+    {
+        if (Portal != null)
+        {
+            GameObject dropAttribute = Instantiate(Portal, PortalPos, Quaternion.identity);
+        }
+        base.Die();
     }
 }

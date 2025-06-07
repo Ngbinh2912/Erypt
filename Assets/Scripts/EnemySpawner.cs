@@ -6,6 +6,8 @@ public class EnemySpawner : MonoBehaviour
 {
     public GroundScanner groundScanner;
     public DoorTrigger doorTrigger;
+    public Transform specialSpawnPoint; // Vi tri dac biet de sinh ra boss
+
     public List<EnemySpawnInfo> tier1Enemies, tier2Enemies, tier3Enemies;
 
     private List<GameObject> spawnedEnemies = new List<GameObject>();
@@ -16,19 +18,31 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         validSpawnPositions = groundScanner.GetGroundPositions();
-        SpawnEnemies(tier1Enemies);
-        SpawnEnemies(tier2Enemies);
-        SpawnEnemies(tier3Enemies);
+        SpawnEnemies(tier1Enemies, useSpecialPoint: false);
+        SpawnEnemies(tier2Enemies, useSpecialPoint: false);
+
+        // vi tri dac biet
+        SpawnEnemies(tier3Enemies, useSpecialPoint: true);
     }
 
-    void SpawnEnemies(List<EnemySpawnInfo> enemyList)
+    void SpawnEnemies(List<EnemySpawnInfo> enemyList, bool useSpecialPoint)
     {
         foreach (var info in enemyList)
         {
             int count = UnityEngine.Random.Range(info.minCount, info.maxCount + 1);
             for (int i = 0; i < count; i++)
             {
-                Vector3 spawnPos = validSpawnPositions[UnityEngine.Random.Range(0, validSpawnPositions.Count)];
+                Vector3 spawnPos;
+
+                if (useSpecialPoint && specialSpawnPoint != null)
+                {
+                    spawnPos = specialSpawnPoint.position;
+                }
+                else
+                {
+                    spawnPos = validSpawnPositions[UnityEngine.Random.Range(0, validSpawnPositions.Count)];
+                }
+
                 GameObject enemy = Instantiate(info.enemyPrefab, spawnPos, Quaternion.identity);
                 enemy.SetActive(true);
 
@@ -49,11 +63,7 @@ public class EnemySpawner : MonoBehaviour
 
         if (spawnedEnemies.Count == 0)
         {
-            if (doorTrigger != null)
-            {
-                doorTrigger.UnlockDoors();
-            }
-
+            doorTrigger?.UnlockDoors();
             onAllEnemiesDefeated?.Invoke();
         }
     }
