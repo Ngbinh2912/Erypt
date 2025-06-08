@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class SpeedUp : MonoBehaviour
 {
-    public float attractRange = 3f;       // ban kinh hut
-    public float moveSpeed = 5f;          // toc do bay ve player
-    public float speedMultiplier = 2f;    // toc do tang len bao nhieu lan
-    public float duration = 5f;           // thoi gian duy tri tang toc
+    public float attractRange = 3f;
+    public float moveSpeed = 5f;
+    public float addedSpeed = 5f;  
+    public float duration = 5f;
 
     private Transform player;
 
@@ -33,7 +33,7 @@ public class SpeedUp : MonoBehaviour
             Player playerScript = other.GetComponent<Player>();
             if (playerScript != null)
             {
-                playerScript.ApplySpeedBoost(speedMultiplier, duration);
+                playerScript.ApplySpeedBoost(addedSpeed, duration);
             }
 
             Destroy(gameObject);
