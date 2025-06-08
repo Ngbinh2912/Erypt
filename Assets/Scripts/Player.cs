@@ -38,6 +38,8 @@ public class Player : MonoBehaviour
     private int playerLayer = 7;
     private int enemyLayer = 8;
 
+    [SerializeField] private GameManager gameManager;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -76,6 +78,11 @@ public class Player : MonoBehaviour
         if (moveInput.x != 0)
         {
             characterSR.flipX = moveInput.x < 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gameManager.PauseGame();
         }
     }
 
@@ -150,7 +157,7 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        gameManager.GameOver();
     }
 
     public void Heal(float amount)
