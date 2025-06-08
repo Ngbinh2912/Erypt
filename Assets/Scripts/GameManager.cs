@@ -7,10 +7,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gameOver;
     [SerializeField] private GameObject pauseGame;
     [SerializeField] private GameObject winGame;
- 
+    [SerializeField] private AudioManager audioManager;
+
     void Start()
     {
         MainMenu();
+        audioManager.StopMusic();
     }
 
     public void MainMenu()
@@ -62,6 +64,7 @@ public class GameManager : MonoBehaviour
         winGame.SetActive(false);
 
         Time.timeScale = 1f;
+        audioManager.PlayDefaultMusic();
     }
 
     public void ResumeGame()

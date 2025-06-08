@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public float speed = 5f;
     private float dashSpeed = 20f;
     private float originalSpeed;
+    private float speedBoostAmount = 0f;
     private Coroutine speedBoostCoroutine;
 
     private TrailRenderer trail;
@@ -39,6 +40,7 @@ public class Player : MonoBehaviour
     private int enemyLayer = 8;
 
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private AudioManager audioManager;
 
     private void Start()
     {
@@ -118,26 +120,31 @@ public class Player : MonoBehaviour
         StopDashEffect();
     }
 
-    public void ApplySpeedBoost(float multiplier, float duration)
+    public void ApplySpeedBoost(float addedSpeed, float duration)
     {
         if (speedBoostCoroutine != null)
         {
             StopCoroutine(speedBoostCoroutine);
+            speed -= speedBoostAmount; 
         }
-        speedBoostCoroutine = StartCoroutine(SpeedBoostRoutine(multiplier, duration));
+        audioManager.PlayBuffSound();
+
+        speedBoostAmount = addedSpeed;
+        speed += speedBoostAmount;
+        speedBoostCoroutine = StartCoroutine(SpeedBoostRoutine(duration));
     }
 
-    private IEnumerator SpeedBoostRoutine(float multiplier, float duration)
+    private IEnumerator SpeedBoostRoutine(float duration)
     {
-        originalSpeed = speed;
-        speed *= multiplier;
-
         if (trail != null) trail.enabled = true;
 
         yield return new WaitForSeconds(duration);
 
-        speed = originalSpeed;
+        speed -= speedBoostAmount;
+        speedBoostAmount = 0f;
+
         if (trail != null) trail.enabled = false;
+
         speedBoostCoroutine = null;
     }
 

@@ -14,7 +14,6 @@ public class Golem : Enemy
         }
     }
 
-    // Hàm được gọi từ Animation Event khi bắt đầu ra đòn
     public void EnableWeaponCollider()
     {
         if (weaponCollider != null)
@@ -23,7 +22,6 @@ public class Golem : Enemy
         }
     }
 
-    // Hàm được gọi từ Animation Event khi kết thúc đòn
     public void DisableWeaponCollider()
     {
         if (weaponCollider != null)

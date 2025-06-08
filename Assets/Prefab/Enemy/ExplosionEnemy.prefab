@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 419621717814950193}
   - component: {fileID: 1143945157200318679}
   - component: {fileID: 5974179218610755717}
-  - component: {fileID: 5395281928776361840}
   - component: {fileID: 7041462756436195951}
+  - component: {fileID: 5395281928776361840}
   m_Layer: 8
   m_Name: ExplosionEnemy
   m_TagString: Enemy
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1596854371
-  m_SortingLayer: 4
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 3474578761864754926, guid: 6991e54fe8bb5724bafb4aba16583d49, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -188,31 +188,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5395281928776361840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3324128195469055755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 567db920bd173e64ba1bb8c3996a05ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyMovementSpeed: 3
-  maxHp: 50
-  stayDamage: 0.5
-  enterDamage: 10
-  attackRange: 1
-  attackCooldown: 1
-  visionRange: 10
-  hpBar: {fileID: 7549579444766018582}
-  Hpbar: {fileID: 541379390892807193}
-  wanderRadius: 2
-  wanderDelay: 1
-  SpeedUp: {fileID: 1052029558815621304, guid: 15f081dc6e6d260469661ad6dd94d11a, type: 3}
-  explosionPrefabs: {fileID: 6736741873673453840, guid: d0288a6980e4206468386be866de1a99, type: 3}
 --- !u!61 &7041462756436195951
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -259,6 +234,31 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.2739592, y: 1.2429581}
   m_EdgeRadius: 0
+--- !u!114 &5395281928776361840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3324128195469055755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 567db920bd173e64ba1bb8c3996a05ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMovementSpeed: 3
+  maxHp: 50
+  stayDamage: 0.5
+  enterDamage: 10
+  attackRange: 1
+  attackCooldown: 1
+  visionRange: 10
+  hpBar: {fileID: 7549579444766018582}
+  Hpbar: {fileID: 541379390892807193}
+  wanderRadius: 2
+  wanderDelay: 1
+  SpeedUp: {fileID: 1052029558815621304, guid: 15f081dc6e6d260469661ad6dd94d11a, type: 3}
+  explosionPrefabs: {fileID: 6736741873673453840, guid: d0288a6980e4206468386be866de1a99, type: 3}
 --- !u!1001 &3975998431577480557
 PrefabInstance:
   m_ObjectHideFlags: 0

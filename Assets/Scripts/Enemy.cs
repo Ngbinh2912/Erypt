@@ -171,6 +171,14 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
+    protected void UpdateHpBar()
+    {
+        if (hpBar != null && maxHp > 0)
+        {
+            hpBar.fillAmount = currentHp / maxHp;
+        }
+    }
+
     protected virtual void Die()
     {
         if (SpeedUp != null && UnityEngine.Random.value <= 0.15f)
@@ -179,13 +187,5 @@ public abstract class Enemy : MonoBehaviour
             Destroy(dropAttribute, 7f);
         }
         Destroy(gameObject);
-    }
-
-    protected void UpdateHpBar()
-    {
-        if (hpBar != null && maxHp > 0)
-        {
-            hpBar.fillAmount = currentHp / maxHp;
-        }
     }
 }

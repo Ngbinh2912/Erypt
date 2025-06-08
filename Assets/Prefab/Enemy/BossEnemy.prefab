@@ -241,8 +241,9 @@ MonoBehaviour:
   hpValue: 20
   miniEnemy: {fileID: 6243283531727717298, guid: 42801b46d61942746af92cbd8a6eb47e, type: 3}
   skillCoolDown: 3
-  PortalPos: {fileID: 0}
+  PortalPos: {x: 0, y: 0, z: 0}
   Portal: {fileID: 2547138961577523843, guid: 67ea4a0f544e3cb4aba1847f3c5cadae, type: 3}
+  audioManager: {fileID: 1781970646247154440, guid: 932edaf0fe5ceaa4988a92522816e6d8, type: 3}
 --- !u!1001 &6916959862306061910
 PrefabInstance:
   m_ObjectHideFlags: 0
