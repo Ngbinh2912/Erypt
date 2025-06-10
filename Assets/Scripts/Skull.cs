@@ -140,7 +140,7 @@ public class Skull : Enemy
 
     protected override void Die()
     {
-        if (PowerUp != null && Random.value <= 0.15f)
+        if (PowerUp != null && Random.value <= 0.18f)
         {
             GameObject dropAttribute = Instantiate(PowerUp, transform.position, Quaternion.identity);
             Destroy(dropAttribute, 7f);

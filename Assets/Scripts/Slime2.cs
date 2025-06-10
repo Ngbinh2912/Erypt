@@ -56,7 +56,7 @@ public class Slime2 : Enemy
 
     protected override void Die()
     {
-        if (PowerUp != null && Random.value <= 0.08f)
+        if (PowerUp != null && Random.value <= 0.12f)
         {
             GameObject dropAttribute = Instantiate(PowerUp, transform.position, Quaternion.identity);
             Destroy(dropAttribute, 7f);

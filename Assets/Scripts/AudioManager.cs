@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource defaultMusic;
-    [SerializeField] private AudioSource bossMusic;
+    public static AudioManager Instance;
+
+    [SerializeField] private AudioSource defaultMusicSource;
+    [SerializeField] private AudioSource bossMusicSource;
     [SerializeField] private AudioSource soundEffectSource;
     [SerializeField] private AudioClip shootClip;
     [SerializeField] private AudioClip reloadClip;
     [SerializeField] private AudioClip buffClip;
-
-    public static AudioManager Instance { get; private set; }
 
     private void Awake()
     {
@@ -49,18 +49,24 @@ public class AudioManager : MonoBehaviour
     }
     public void PlayDefaultMusic()
     {
-        bossMusic.Stop();
-        defaultMusic.Play();
+        if (bossMusicSource != null && bossMusicSource.isPlaying)
+            bossMusicSource.Stop();
+
+        if (defaultMusicSource != null && !defaultMusicSource.isPlaying)
+            defaultMusicSource.Play();
     }
     public void PlayBossMusic()
     {
-        defaultMusic.Stop();
-        bossMusic.Play();
+        if (defaultMusicSource != null && defaultMusicSource.isPlaying)
+            defaultMusicSource.Stop();
+
+        if (bossMusicSource != null && !bossMusicSource.isPlaying)
+            bossMusicSource.Play();
     }
     public void StopMusic()
     {
         soundEffectSource.Stop();
-        defaultMusic.Stop();
-        bossMusic.Stop();
+        defaultMusicSource.Stop();
+        bossMusicSource.Stop();
     }
 }
