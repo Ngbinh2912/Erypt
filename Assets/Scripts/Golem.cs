@@ -44,7 +44,7 @@ public class Golem : Enemy
 
     protected override void Die()
     {
-        if (PowerUp != null && Random.value <= 0.1f)
+        if (PowerUp != null && Random.value <= 0.15f)
         {
             GameObject dropAttribute = Instantiate(PowerUp, transform.position, Quaternion.identity);
             Destroy(dropAttribute, 7f);

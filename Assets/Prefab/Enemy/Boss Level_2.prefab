@@ -494,9 +494,8 @@ MonoBehaviour:
   FirePos2: {fileID: 3771119541508246712}
   projectilePrefab: {fileID: 2816214218942736350, guid: f983829177b23bf40b07bdaa4a4ac0cf, type: 3}
   projectileSpeed: 8
-  healAmount: 20
+  healAmount: 50
   duration: 2
-  audioManager: {fileID: 1781970646247154440, guid: 932edaf0fe5ceaa4988a92522816e6d8, type: 3}
 --- !u!1001 &1309202107098953981
 PrefabInstance:
   m_ObjectHideFlags: 0

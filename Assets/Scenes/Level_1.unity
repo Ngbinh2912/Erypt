@@ -40936,6 +40936,10 @@ PrefabInstance:
       propertyPath: groundTilemap
       value: 
       objectReference: {fileID: 651306928}
+    - target: {fileID: 7064135865430181395, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7402901604539691823, guid: ac2c1e3de0ab845428779e0cf055d5f1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.62
@@ -41089,16 +41093,32 @@ PrefabInstance:
       value: AudioManager
       objectReference: {fileID: 0}
     - target: {fileID: 1895404405530627101, guid: 932edaf0fe5ceaa4988a92522816e6d8, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895404405530627101, guid: 932edaf0fe5ceaa4988a92522816e6d8, type: 3}
       propertyPath: m_Volume
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895404405530627101, guid: 932edaf0fe5ceaa4988a92522816e6d8, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895404405530627101, guid: 932edaf0fe5ceaa4988a92522816e6d8, type: 3}
+      propertyPath: m_audioClip
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1895404405530627101, guid: 932edaf0fe5ceaa4988a92522816e6d8, type: 3}
       propertyPath: m_PlayOnAwake
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3339412256364360705, guid: 932edaf0fe5ceaa4988a92522816e6d8, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3339412256364360705, guid: 932edaf0fe5ceaa4988a92522816e6d8, type: 3}
       propertyPath: m_Volume
-      value: 0.2
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 3339412256364360705, guid: 932edaf0fe5ceaa4988a92522816e6d8, type: 3}
       propertyPath: m_PlayOnAwake
@@ -41322,6 +41342,14 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 415892573}
+    - target: {fileID: 5179743982862869802, guid: 5faef48aa4e47614b8f1db7d4adb8c2e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8421680605252380162, guid: 5faef48aa4e47614b8f1db7d4adb8c2e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.9092946
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -29,6 +29,8 @@ public class DoorTrigger : MonoBehaviour
             enemySpawner.onAllEnemiesDefeated += UnlockDoors;
     }
 
+    protected virtual void OnPlayerEnterRoom() { }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (!triggered && other.CompareTag("Player"))
@@ -44,10 +46,12 @@ public class DoorTrigger : MonoBehaviour
 
             if (exitDoorRenderer != null)
                 exitDoorRenderer.enabled = true;
+
+            OnPlayerEnterRoom();
         }
     }
 
-    public void UnlockDoors()
+    public virtual void UnlockDoors()
     {
         if (playerHasPassed)
         {
