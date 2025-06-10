@@ -5,7 +5,6 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
 
     [SerializeField] private AudioSource defaultMusicSource;
-    [SerializeField] private AudioSource bossMusicSource;
     [SerializeField] private AudioSource soundEffectSource;
     [SerializeField] private AudioClip shootClip;
     [SerializeField] private AudioClip reloadClip;
@@ -23,8 +22,6 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
 
     public void PlayShootSound()
     {
@@ -49,24 +46,12 @@ public class AudioManager : MonoBehaviour
     }
     public void PlayDefaultMusic()
     {
-        if (bossMusicSource != null && bossMusicSource.isPlaying)
-            bossMusicSource.Stop();
-
         if (defaultMusicSource != null && !defaultMusicSource.isPlaying)
             defaultMusicSource.Play();
-    }
-    public void PlayBossMusic()
-    {
-        if (defaultMusicSource != null && defaultMusicSource.isPlaying)
-            defaultMusicSource.Stop();
-
-        if (bossMusicSource != null && !bossMusicSource.isPlaying)
-            bossMusicSource.Play();
     }
     public void StopMusic()
     {
         soundEffectSource.Stop();
         defaultMusicSource.Stop();
-        bossMusicSource.Stop();
     }
 }

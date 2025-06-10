@@ -7,12 +7,29 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gameOver;
     [SerializeField] private GameObject pauseGame;
     [SerializeField] private GameObject winGame;
-    [SerializeField] private AudioManager audioManager;
+
+    public static GameManager Instance;
+
+    public float savedHp = 150f;
+    public int savedBulletCount = 1;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {
         MainMenu();
-        audioManager.StopMusic();
+        AudioManager.Instance.StopMusic();
     }
 
     public void MainMenu()
@@ -23,6 +40,8 @@ public class GameManager : MonoBehaviour
         winGame.SetActive(false);
 
         Time.timeScale = 0f;
+        savedHp = 150f;
+        savedBulletCount = 1;
     }
 
     public void GameOver()
@@ -64,7 +83,7 @@ public class GameManager : MonoBehaviour
         winGame.SetActive(false);
 
         Time.timeScale = 1f;
-        audioManager.PlayDefaultMusic();
+        AudioManager.Instance.PlayDefaultMusic();
     }
 
     public void ResumeGame()
