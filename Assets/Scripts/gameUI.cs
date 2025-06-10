@@ -2,10 +2,24 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class gameUI : MonoBehaviour
 {
-    [SerializeField] private GameManager gameManager;
+    public static gameUI Instance;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public void StartGame()
     {
-        gameManager.StartGame();
+        GameManager.Instance.StartGame();
     }
     public void QuitGame()
     {
@@ -14,11 +28,12 @@ public class gameUI : MonoBehaviour
 
     public void ContinuGame()
     {
-        gameManager.ResumeGame(); 
+        GameManager.Instance.ResumeGame(); 
     }
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GameManager.Instance.MainMenu();
+        SceneManager.LoadScene("Level_1");
     }
 }

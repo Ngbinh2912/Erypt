@@ -21,8 +21,6 @@ public class BossLevel2 : Enemy
     [SerializeField] private float healAmount = 20f;
     [SerializeField] private float duration = 2f;
 
-    private bool playBossMusic = false;
-
     private bool isInvulnerable = false;
 
     protected override void Start()
@@ -42,11 +40,6 @@ public class BossLevel2 : Enemy
 
         if (SawPlayer || (distanceToPlayer <= visionRange && CanSeePlayer()))
         {
-            if (!playBossMusic && CanSeePlayer())
-            {
-                AudioManager.Instance?.PlayBossMusic();
-                playBossMusic = true;
-            }
             SawPlayer = true;
             FlipEnemy();
 

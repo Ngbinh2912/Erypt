@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     public float dashDelaySeconds;
     private Coroutine dashEffectCoroutine;
 
-    [SerializeField] protected float maxHp = 100f;
+    [SerializeField] protected float maxHp = 150f;
     protected float currentHp;
     [SerializeField] private Image hpBar;
 
@@ -40,7 +40,6 @@ public class Player : MonoBehaviour
     private int enemyLayer = 8;
 
     [SerializeField] private GameManager gameManager;
-    [SerializeField] private AudioManager audioManager;
 
     private void Start()
     {
@@ -57,6 +56,7 @@ public class Player : MonoBehaviour
             hpBar = transform.Find("Hpbar/Hp").GetComponent<Image>();
         }
 
+        currentHp = GameManager.Instance.savedHp;
         updateHpBar();
     }
 
@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            gameManager.PauseGame();
+            GameManager.Instance.PauseGame();
         }
     }
 
@@ -127,7 +127,7 @@ public class Player : MonoBehaviour
             StopCoroutine(speedBoostCoroutine);
             speed -= speedBoostAmount; 
         }
-        audioManager.PlayBuffSound();
+        AudioManager.Instance.PlayBuffSound();
 
         speedBoostAmount = addedSpeed;
         speed += speedBoostAmount;
@@ -156,15 +156,12 @@ public class Player : MonoBehaviour
         currentHp = Mathf.Max(currentHp, 0);
         updateHpBar();
 
+        GameManager.Instance.savedHp = currentHp;
+
         if (currentHp <= 0)
         {
             Die();
         }
-    }
-
-    private void Die()
-    {
-        gameManager.GameOver();
     }
 
     public void Heal(float amount)
@@ -172,6 +169,13 @@ public class Player : MonoBehaviour
         currentHp += amount;
         currentHp = Mathf.Clamp(currentHp, 0, maxHp);
         updateHpBar();
+
+        GameManager.Instance.savedHp = currentHp;
+    }
+
+    private void Die()
+    {
+        GameManager.Instance.GameOver();
     }
 
     protected private void updateHpBar()

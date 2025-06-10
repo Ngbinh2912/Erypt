@@ -29,6 +29,10 @@ public class EnemyBullet : MonoBehaviour
             Player player = collision.GetComponent<Player>();
             player.takeDamage(15f);
         }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
     }
 
 }

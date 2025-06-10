@@ -17,14 +17,15 @@ public class LongRangeWeapon : MonoBehaviour
     private float timedelay;
     private bool isReloading = false;
 
-    public int bulletCount = 1;             // so vien dan ban lien tiep
+    public int bulletCount;             // so vien dan ban lien tiep
     public float timeBetweenShots = 0.1f;   // khoang cach thoi gian giua cac vien dan
-
-    [SerializeField] private AudioManager audioManager;
 
     void Start()
     {
         currentAmmo = maxAmmo;
+        Debug.Log("Cap nhat so dan");
+        bulletCount = GameManager.Instance.savedBulletCount;
+        Debug.Log("Da cap nhat so dan" + bulletCount);
     }
 
     void Update()
@@ -73,7 +74,7 @@ public class LongRangeWeapon : MonoBehaviour
             Rigidbody2D rb = bulletTmp.GetComponent<Rigidbody2D>();
             rb.AddForce(transform.right * bulletForce, ForceMode2D.Impulse);
 
-            audioManager.PlayShootSound(); // phat am thanh ban dan
+            AudioManager.Instance.PlayShootSound();
 
             yield return new WaitForSeconds(timeBetweenShots); // delay giua cac vien dan
         }
@@ -87,7 +88,7 @@ public class LongRangeWeapon : MonoBehaviour
         {
             isReloading = true;
             timedelay = timeReload;
-            audioManager.PlayReloadSound(); // phat am thanh nap dan
+            AudioManager.Instance.PlayReloadSound(); // phat am thanh nap dan
         }
         if (isReloading)
         {
@@ -104,6 +105,7 @@ public class LongRangeWeapon : MonoBehaviour
     public void IncreaseBulletCount(int amount)
     {
         bulletCount += amount;
-        audioManager.PlayBuffSound(); // phat am thanh buff
+        GameManager.Instance.savedBulletCount = bulletCount;
+        AudioManager.Instance.PlayBuffSound();
     }
 }
