@@ -20315,6 +20315,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5179743982862869802, guid: 5faef48aa4e47614b8f1db7d4adb8c2e, type: 3}
   m_PrefabInstance: {fileID: 7613756021865420365}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &754802148 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6359442674196914154, guid: 932edaf0fe5ceaa4988a92522816e6d8, type: 3}
+  m_PrefabInstance: {fileID: 144727093519747105}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &804771933
 GameObject:
   m_ObjectHideFlags: 0
@@ -27327,7 +27332,7 @@ Transform:
   m_GameObject: {fileID: 1037269782}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.1, y: 74, z: 0}
+  m_LocalPosition: {x: -8.94, y: 83.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46649,6 +46654,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1781970646247154440, guid: 932edaf0fe5ceaa4988a92522816e6d8, type: 3}
+      propertyPath: defeatClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5118d359ee1065f44ba828dc70e6c86f, type: 3}
+    - target: {fileID: 1781970646247154440, guid: 932edaf0fe5ceaa4988a92522816e6d8, type: 3}
+      propertyPath: GameOverSource
+      value: 
+      objectReference: {fileID: 754802148}
     - target: {fileID: 1781970646247154440, guid: 932edaf0fe5ceaa4988a92522816e6d8, type: 3}
       propertyPath: BossMusicSource
       value: 
