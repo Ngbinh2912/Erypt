@@ -21,7 +21,10 @@ public class BossLevel2 : Enemy
     [SerializeField] private float healAmount = 20f;
     [SerializeField] private float duration = 2f;
 
+    [SerializeField] private GameObject Cup;
+
     private bool isInvulnerable = false;
+    private bool isPlayBossMusic = false;
 
     protected override void Start()
     {
@@ -40,6 +43,11 @@ public class BossLevel2 : Enemy
 
         if (SawPlayer || (distanceToPlayer <= visionRange && CanSeePlayer()))
         {
+            if (!isPlayBossMusic)
+            {
+                AudioManager.Instance.PlayBossMusic();
+                isPlayBossMusic = true;
+            }
             SawPlayer = true;
             FlipEnemy();
 
@@ -262,5 +270,9 @@ public class BossLevel2 : Enemy
         }
 
         this.enabled = false;
+        if (Cup != null)
+        {
+            GameObject dropAttribute = Instantiate(Cup, transform.position, Quaternion.identity);
+        }
     }
 }

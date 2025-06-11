@@ -13,6 +13,7 @@ public class BossEnemy : Enemy
     [SerializeField] private Vector3 PortalPos;
     [SerializeField] private GameObject Portal;
 
+    private bool isPlayBossMusic = false;
     private float nextSkillTime = 0f;
     private Animator animator;
 
@@ -31,6 +32,11 @@ public class BossEnemy : Enemy
         float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
         if (distanceToPlayer <= attackRange * 1.5f && Time.time >= nextSkillTime && CanSeePlayer())
         {
+            if (!isPlayBossMusic)
+            {
+                AudioManager.Instance.PlayBossMusic();
+                isPlayBossMusic = true;
+            }
             UseSkill();
         }
     }
