@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMovementSpeed: 2
-  maxHp: 800
+  maxHp: 900
   stayDamage: 0.5
   enterDamage: 20
   attackRange: 15

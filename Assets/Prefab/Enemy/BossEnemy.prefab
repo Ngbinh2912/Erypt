@@ -243,6 +243,8 @@ MonoBehaviour:
   skillCoolDown: 3
   PortalPos: {x: 0, y: 0, z: 0}
   Portal: {fileID: 2547138961577523843, guid: 67ea4a0f544e3cb4aba1847f3c5cadae, type: 3}
+  Potion: {fileID: 4543882464009620761, guid: 9d46c2eb48dbe2d458b609c832840daa, type: 3}
+  BuffBullet: {fileID: 1367634740908984149, guid: a14c4fb94521ce14e8067f5c6b13f8de, type: 3}
 --- !u!1001 &6916959862306061910
 PrefabInstance:
   m_ObjectHideFlags: 0
