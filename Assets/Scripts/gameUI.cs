@@ -31,6 +31,12 @@ public class gameUI : MonoBehaviour
         GameManager.Instance.ResumeGame(); 
     }
 
+    public void WinGame()
+    {
+        GameManager.Instance.WinGame();
+        SceneManager.LoadScene("Level_1");
+    }
+
     public void MainMenu()
     {
         GameManager.Instance.MainMenu();

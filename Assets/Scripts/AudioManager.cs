@@ -5,10 +5,12 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
 
     [SerializeField] private AudioSource defaultMusicSource;
+    [SerializeField] private AudioSource BossMusicSource;
     [SerializeField] private AudioSource soundEffectSource;
     [SerializeField] private AudioClip shootClip;
     [SerializeField] private AudioClip reloadClip;
     [SerializeField] private AudioClip buffClip;
+    [SerializeField] private AudioClip winningClip;
 
     private void Awake()
     {
@@ -44,8 +46,27 @@ public class AudioManager : MonoBehaviour
             soundEffectSource.PlayOneShot(buffClip);
         }
     }
+    public void PlayWinningSound()
+    {
+        if (winningClip != null)
+        {
+            soundEffectSource.PlayOneShot(winningClip);
+        }
+    }
+    public void PlayBossMusic()
+    {
+        defaultMusicSource.Stop();
+        if (BossMusicSource != null && !BossMusicSource.isPlaying)
+        {
+            BossMusicSource.Play();
+        }
+    }
     public void PlayDefaultMusic()
     {
+        if (BossMusicSource != null && BossMusicSource.isPlaying)
+        {
+            BossMusicSource.Stop();
+        }
         if (defaultMusicSource != null && !defaultMusicSource.isPlaying)
             defaultMusicSource.Play();
     }
@@ -53,5 +74,6 @@ public class AudioManager : MonoBehaviour
     {
         soundEffectSource.Stop();
         defaultMusicSource.Stop();
+        BossMusicSource.Stop();
     }
 }

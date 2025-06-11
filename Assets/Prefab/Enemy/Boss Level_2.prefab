@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMovementSpeed: 2
-  maxHp: 700
+  maxHp: 800
   stayDamage: 0.5
   enterDamage: 20
   attackRange: 15
@@ -494,8 +494,9 @@ MonoBehaviour:
   FirePos2: {fileID: 3771119541508246712}
   projectilePrefab: {fileID: 2816214218942736350, guid: f983829177b23bf40b07bdaa4a4ac0cf, type: 3}
   projectileSpeed: 8
-  healAmount: 50
+  healAmount: 100
   duration: 2
+  Cup: {fileID: 5990013198597317664, guid: 5bed5588592dab148bb4320ecf2f253c, type: 3}
 --- !u!1001 &1309202107098953981
 PrefabInstance:
   m_ObjectHideFlags: 0
