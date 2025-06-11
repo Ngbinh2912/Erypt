@@ -175,6 +175,7 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
+        AudioManager.Instance.PlayDefeatSound();
         GameManager.Instance.GameOver();
     }
 

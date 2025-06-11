@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
         winGame.SetActive(false);
 
         Time.timeScale = 0f;
+        AudioManager.Instance.PlayGameOverMusic();
     }
 
     public void PauseGame()
