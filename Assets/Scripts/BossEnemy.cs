@@ -12,6 +12,8 @@ public class BossEnemy : Enemy
     [SerializeField] private float skillCoolDown = 2f;
     [SerializeField] private Vector3 PortalPos;
     [SerializeField] private GameObject Portal;
+    [SerializeField] private GameObject Potion;
+    [SerializeField] private GameObject BuffBullet;
 
     private bool isPlayBossMusic = false;
     private float nextSkillTime = 0f;
@@ -127,6 +129,15 @@ public class BossEnemy : Enemy
         if (Portal != null)
         {
             GameObject dropAttribute = Instantiate(Portal, PortalPos, Quaternion.identity);
+        }
+        if (Potion != null)
+        {
+            GameObject dropAttribute2 = Instantiate(Potion, transform.position, Quaternion.identity);
+        }
+        if (BuffBullet != null && Random.value <= 0.5f)
+        {
+            GameObject dropAttribute3 = Instantiate(BuffBullet, transform.position, Quaternion.identity);
+            Destroy(dropAttribute3, 7f);
         }
         base.Die();
     }
