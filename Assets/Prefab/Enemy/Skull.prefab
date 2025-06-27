@@ -251,7 +251,7 @@ MonoBehaviour:
   bulletNormalPrefab: {fileID: 2816214218942736350, guid: 03b82f1061071ea4592d7b74b7d82d88, type: 3}
   bulletStrongPrefab: {fileID: 2816214218942736350, guid: 9a0b63b217e296c4c896486d85cceb77, type: 3}
   firePos: {fileID: 5289639005715382878}
-  preferredDistance: 3
+  preferredDistance: 6
   PowerUp: {fileID: 1367634740908984149, guid: a14c4fb94521ce14e8067f5c6b13f8de, type: 3}
 --- !u!95 &7649761434023489117
 Animator:

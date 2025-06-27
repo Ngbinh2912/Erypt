@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d417829ea17a5584da70c60d83e799b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyMovementSpeed: 3
+  enemyMovementSpeed: 2.5
   maxHp: 50
   stayDamage: 0.5
   enterDamage: 10
@@ -263,7 +263,7 @@ MonoBehaviour:
   visibleDuration: 3
   projectilePrefab: {fileID: 2816214218942736350, guid: 88fe06914551b2447ac9698336ec11d4, type: 3}
   projectileSpeed: 5
-  preferredDistance: 3
+  preferredDistance: 4
   firePos: {fileID: 4411950029752294008}
 --- !u!1 &9092172034544340406
 GameObject:
