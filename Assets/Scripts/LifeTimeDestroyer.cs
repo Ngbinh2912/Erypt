@@ -3,7 +3,9 @@ using UnityEngine;
 public class LifeTimeDestroyer : MonoBehaviour
 {
 
-    public float lifeTime = 1f;
+    public float lifeTime = 5f;
+    [SerializeField] private float damage = 10f;
+    [SerializeField] GameObject bloodAnimation;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,5 +16,25 @@ public class LifeTimeDestroyer : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            Enemy enemy = collision.GetComponent<Enemy>();
+            if(enemy != null)
+            {
+                enemy.takeDamage(damage);
+                GameObject blood = Instantiate(bloodAnimation, transform.position, Quaternion.identity);
+                Destroy(blood, 1f);
+            }
+
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

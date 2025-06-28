@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Enemy
+  - enemyWeapon
+  - Explosion
+  - slimeItem
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
@@ -12,9 +17,9 @@ TagManager:
   - Water
   - UI
   - Obstacle
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - EnemyProjectile
   - 
   - 
   - 
@@ -38,8 +43,32 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ground
+    uniqueID: 2385141819
+    locked: 0
+  - name: Wall
+    uniqueID: 3361734391
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Blood
+    uniqueID: 3095696643
+    locked: 0
+  - name: Enemy
+    uniqueID: 2698112925
+    locked: 0
+  - name: Player
+    uniqueID: 1312241927
+    locked: 0
+  - name: Hpbar
+    uniqueID: 3790882647
+    locked: 0
+  - name: Explosion
+    uniqueID: 770485607
+    locked: 0
+  - name: 
+    uniqueID: 3093498863
     locked: 0
   m_RenderingLayers:
   - Default
