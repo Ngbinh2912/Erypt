@@ -6,6 +6,7 @@ Nguyễn Trọng Bình:
   - Xây dựng map level 2
   - Xây dựng các enemy, boss level 2
   - Tạo hệ thống các quản lý Manager: SpawnEnemy,Audio…
+
 Vũ Đức Kiên: 
   - Enemy lớp cha, slime, các sprites enemy, boss level1
   - Xây dựng map level 1
